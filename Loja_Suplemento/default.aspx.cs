@@ -27,17 +27,19 @@ namespace Loja_Suplemento
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
-            /*string Usuario = "admin";
-            string Senha = "123";*/
+            //Criando conexão com o banco
 
-            if ((txtUsuario.Text != "admin") || (txtSenha.Text != "123"))
+           using(SuplementosEntities conexao = new SuplementosEntities())
             {
-                lblMsg.Text = ("Dados preenchidos incorretamente");
+                String user = txtUsuario.Text;
+                String pass = txtSenha.Text;
+                Usuarios objuser = conexao.Usuarios.Where(linha => linha.Nome.Equals(user) && (linha.Senha.Equals(pass))).FirstOrDefault();
+                if (objuser != null)
+                {
+                    Session["nomeusuario"] = objuser.Nome;
+                    Response.Redirect("Produto.aspx");
+                }
             }
-            else
-            {
-                Response.Redirect("Produto.aspx");
-            }   
         }
     }
 }

@@ -11,7 +11,15 @@ namespace Loja_Suplemento
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            String nome_user = (String)Session["nomeusuario"];
+            if(nome_user == null)
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                
+            }
         }
     }
 }

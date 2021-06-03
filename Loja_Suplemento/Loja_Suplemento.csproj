@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -72,6 +80,17 @@
     <Content Include="frmcadastro.aspx" />
     <Content Include="default.aspx" />
     <Content Include="Img\valorant-spray-phoenix.png" />
+    <Content Include="Img\WHEY-100_-PURE_POUCH-907g_COOKIES.png" />
+    <Content Include="Phoenix.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Phoenix.Context.cs</LastGenOutput>
+      <DependentUpon>Phoenix.edmx</DependentUpon>
+    </Content>
+    <Content Include="Phoenix.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Phoenix.edmx</DependentUpon>
+      <LastGenOutput>Phoenix.cs</LastGenOutput>
+    </Content>
     <Content Include="Produto.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -90,6 +109,21 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Phoenix.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Phoenix.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Phoenix.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Phoenix.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Phoenix.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Phoenix.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Produto.aspx.cs">
       <DependentUpon>Produto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,16 +131,32 @@
     <Compile Include="Produto.aspx.designer.cs">
       <DependentUpon>Produto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Produtos.cs">
+      <DependentUpon>Phoenix.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>Phoenix.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <EntityDeploy Include="Phoenix.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Phoenix.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Phoenix.edmx.diagram">
+      <DependentUpon>Phoenix.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
