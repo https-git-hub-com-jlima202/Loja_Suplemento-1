@@ -14,6 +14,17 @@
             <img src="Img/valorant-spray-phoenix.png" width="285" />
         </div>
         <div>
+
+            <asp:Label ID="lblMsg" runat="server"></asp:Label>
+
+        </div>
+        <div>
+
+            <asp:Label ID="Label6" runat="server" Text="Identificação:"></asp:Label>
+            <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
+
+        </div>
+        <div>
             <asp:Label ID="Label2" runat="server" Text=" Nome"></asp:Label>
             :
             <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
@@ -44,10 +55,14 @@
          <div>
              <asp:Button ID="btnCadastrar" runat="server" OnClick="btnCadastrar_Click" Text="Cadastrar" />
 &nbsp;&nbsp;
-             <asp:Label ID="lblMsg" runat="server"></asp:Label>
-         </div>
-         <div>
-         </div>
+             <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" />
+         &nbsp;&nbsp;      
+
+            <asp:GridView ID="gdUsuarios" runat="server" BackColor="#CCCCCC" BorderColor="Black" BorderStyle="Solid" CaptionAlign="Top" OnSelectedIndexChanged="gdUsuarios_SelectedIndexChanged">
+            </asp:GridView>
+
+        </div>
+        
     </form>
 </body>
 </html>

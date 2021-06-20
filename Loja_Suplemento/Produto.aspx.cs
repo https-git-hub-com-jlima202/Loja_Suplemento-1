@@ -11,6 +11,14 @@ namespace Loja_Suplemento
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SuplementosEntities conexao = new SuplementosEntities();
+            var lista = conexao.Produtos.ToList();
+            gdProdutos.DataSource = lista;
+            gdProdutos.DataBind();
+            ddlProdutos.DataSource = lista;
+            ddlProdutos.DataTextField = "Nomeproduto";
+            ddlProdutos.DataValueField ="Preco";
+            ddlProdutos.DataBind();
             String nome_user = (String)Session["nomeusuario"];
             if(nome_user == null)
             {
@@ -20,6 +28,16 @@ namespace Loja_Suplemento
             {
                 
             }
+        }
+
+        protected void btCadastrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Cadastros.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

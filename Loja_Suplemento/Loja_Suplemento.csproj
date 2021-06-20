@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cadastros.aspx" />
     <Content Include="Estilo.css" />
     <Content Include="EstiloCadastro.css" />
     <Content Include="frmcadastro.aspx" />
@@ -95,6 +96,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastros.aspx.cs">
+      <DependentUpon>Cadastros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastros.aspx.designer.cs">
+      <DependentUpon>Cadastros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmcadastro.aspx.cs">
       <DependentUpon>frmcadastro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -9,19 +9,11 @@ namespace Loja_Suplemento
 {
     public partial class frmusuario : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmcadastro.aspx");
-
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -38,6 +30,10 @@ namespace Loja_Suplemento
                 {
                     Session["nomeusuario"] = objuser.Nome;
                     Response.Redirect("Produto.aspx");
+                }
+                else
+                {
+                    lblMsg.Text = "Preencha os dados corretamente, por favor";
                 }
             }
         }

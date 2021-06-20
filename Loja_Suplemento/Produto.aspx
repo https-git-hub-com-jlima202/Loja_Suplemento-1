@@ -14,7 +14,7 @@
            <header>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white" >
-    <div class="container-fluid" style="background-color:orange;">
+    <div class="container-fluid" style="background-color:orange;border-color:black">
       <button
         class="navbar-toggler"
         type="button"
@@ -43,9 +43,10 @@
   <!-- Navbar -->
 
   <!-- Background image -->
-  <div style="margin-left:35%;">  
-  <img src="Img/valorant-spray-phoenix.png" width="50%" />
-  </div>
+<div style ="text-align:center">
+    <img src="Img/valorant-spray-phoenix.png" /> "
+
+</div>
                
   <!-- Background image -->
 </header>
@@ -53,25 +54,39 @@
         <div>
             <asp:Image ID="Image1" runat="server" />
         </div>
-        <div style="margin-left:10%;margin-right:10%;border:5px solid black">
-            <div class="input-group rounded" style="width:35%;margin-left:35%">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                aria-describedby="search-addon" />
-                    <span class="input-group-text border-0" id="search-addon">
-                     <i class="fas fa-search"></i>
-                     </span>
-            </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="Img/WHEY-100_-PURE_POUCH-907g_COOKIES.png" class="card-img-top" alt="Produto">
-                    <div class="card-body">
-                        <h5 class="card-title">Whey Protein Concentrado</h5>
-                        <p class="card-text">O suplemento perfeito para quem foca em ganho de massa corporal</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-         <div>
-         </div>
+        <div style ="text-align:center">
+
+            <asp:DropDownList ID="ddlProdutos" runat="server">
+            </asp:DropDownList>
+
+        </div>
+        <div style ="text-align: center">
+
+        </div>
+        <div style ="text-align:center">
+
+            <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar Produto" BackColor="Orange" BorderColor="Black" OnClick="btCadastrar_Click" />
+
+        </div>
+        <div style ="text-align:center">
+
+            <asp:GridView ID="gdProdutos" runat="server" HorizontalAlign="Center" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
+                <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                <FooterStyle BackColor="Tan" />
+                <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                <SortedAscendingCellStyle BackColor="#FAFAE7" />
+                <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+                <SortedDescendingCellStyle BackColor="#E1DB9C" />
+                <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+            </asp:GridView>
+
+        </div>
+
+           
+
+         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </form>
 </body>

@@ -34,7 +34,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        </div>
+            </div>
         <div style="margin-bottom: 0px">
 
             <asp:Button ID="btnCadastrar" runat="server" OnClick="btnCadastrar_Click" Text="Cadastrar" />
@@ -47,8 +47,6 @@
 
         </div>
         <div>
-            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-            </asp:GridView>
         </div>
         <div>
 
